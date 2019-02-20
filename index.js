@@ -1,6 +1,8 @@
+var fs = require('fs');
 require('dotenv').config();
 const Snoowrap = require('snoowrap');
 const Snoostorm = require('snoostorm');
+const ignores = JSON.parse(fs.readFileSync('./toignore.json'));
 
 var botReply = `I want to say thank you for using the correct method of hiding spoilers, which works globally across all platforms even if you have CSS disabled.
 
@@ -28,7 +30,7 @@ const streamOpts = {
 
 const comments = client.CommentStream(streamOpts);
 comments.on('comment', (comment) => {
-    if (comment.author.name == process.env.REDDIT_USER) return;
+    if ((comment.author.name == process.env.REDDIT_USER) || (ignores.bots.includes(comment.author.name)) || (ignores.users.includes(comment.author.name)) || (ignores.subreddits.includes(comment.subreddit.display_name)) ) return;
     let match = comment.body.match(/>!(.*?)!</);
     if (match) { 
         console.log('Found a comment by ' + comment.author.name + ' in ' + comment.subreddit_name_prefixed + ' which contained a spoiler.');
