@@ -10,7 +10,7 @@ You can also use just \`>!\` at the beginning of a paragraph to mark the entire 
 
 More tips tricks related to formatting can be found here: https://www.reddit.com/wiki/markdown
 
-^^^I ^^^am ^^^a ^^^bot, ^^^created ^^^by ^^^/u/xlet_cobra. ^^^Please ^^^send ^^^any ^^^feedback ^^^[here.](https://www.reddit.com/message/compose/?to=xlet_cobra)`;
+^^^I ^^^am ^^^a ^^^bot, ^^^created ^^^by ^^^/u/xlet_cobra. ^^^Please ^^^send ^^^any ^^^feedback ^^^[here.](https://www.reddit.com/message/compose/?to=xlet_cobra) ^^^[Source](https://github.com/OfficialRenny/reddit-spoiler-bot)`;
 
 const r = new Snoowrap({
     userAgent: 'rennys-bot',
