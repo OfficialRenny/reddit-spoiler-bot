@@ -12,7 +12,7 @@ You can also use just \`>!\` at the beginning of a paragraph to mark the entire 
 
 More tips tricks related to formatting can be found here: https://www.reddit.com/wiki/markdown
 
-^^^I ^^^am ^^^a ^^^bot, ^^^created ^^^by ^^^/u/xlet_cobra. ^^^Please ^^^send ^^^any ^^^feedback ^^^[here.](https://www.reddit.com/message/compose/?to=xlet_cobra) ^^^[Source](https://github.com/OfficialRenny/reddit-spoiler-bot)`;
+^^^I ^^^am ^^^a ^^^bot, ^^^created ^^^by ^^^[xlet_cobra](https://www.reddit.com/u/xlet_cobra). ^^^Please ^^^send ^^^any ^^^feedback ^^^[here.](https://www.reddit.com/message/compose/?to=xlet_cobra) ^^^[Source](https://github.com/OfficialRenny/reddit-spoiler-bot)`;
 
 const r = new Snoowrap({
     userAgent: 'rennys-bot',
@@ -33,7 +33,6 @@ comments.on('comment', (comment) => {
     if ((comment.author.name == process.env.REDDIT_USER) || (ignores.bots.includes(comment.author.name)) || (ignores.users.includes(comment.author.name)) || (ignores.subreddits.includes(comment.subreddit.display_name)) ) return;
     let match = comment.body.match(/>!(.*?)!</);
     if (match) { 
-        console.log('Found a comment by ' + comment.author.name + ' in ' + comment.subreddit_name_prefixed + ' which contained a spoiler.');
         comment.reply(botReply).catch((err) => {
             console.log(err.message);
             });

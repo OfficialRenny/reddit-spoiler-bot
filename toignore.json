@@ -1,5 +1,5 @@
 {
 	"bots": ["AutoModerator", "spoiler-bot"],
 	"users": [],
-	"subreddits": []
+	"subreddits": ["reddeadredemption"]
 }
